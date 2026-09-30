@@ -19,8 +19,8 @@ class ChannelTruth:
     base_cpc: float
     # Cost per click rises as (1 + daily_spend / saturation): diminishing returns.
     saturation_usd_per_day: float
-    base_cvr: float  # click -> trial signup (the experiment conversion)
-    signup_to_paid: float  # trial signup -> paying customer
+    base_cvr: float  # click -> lead (the experiment conversion)
+    signup_to_paid: float  # lead -> paying customer
     always_on_daily_usd: float
 
     def cpc(self, daily_spend_usd: float) -> float:
@@ -49,10 +49,10 @@ class SegmentTruth:
 CHANNELS: dict[str, ChannelTruth] = {
     c.name: c
     for c in (
-        ChannelTruth("google_ads", 1.50, 3600, 0.110, 0.0250, 900),
-        ChannelTruth("meta_ads", 0.62, 1800, 0.100, 0.0098, 500),
-        ChannelTruth("linkedin_ads", 2.30, 2800, 0.110, 0.0280, 700),
-        ChannelTruth("email", 0.35, 400, 0.090, 0.0200, 60),
+        ChannelTruth("google_ads", 1.50, 3600, 0.30, 0.00917, 900),
+        ChannelTruth("meta_ads", 0.62, 1800, 0.25, 0.00392, 500),
+        ChannelTruth("linkedin_ads", 2.30, 2800, 0.30, 0.01027, 700),
+        ChannelTruth("email", 0.35, 400, 0.22, 0.00818, 60),
     )
 }
 
