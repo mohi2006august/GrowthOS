@@ -80,6 +80,7 @@ PAST_EXPERIMENTS: tuple[PastExperiment, ...] = (
         -0.11, "loss",
         "Discounting read as low-end to controllers and demo-booked rate fell 11%. Do not discount to "
         "mid-market; lead with audit readiness and proof instead.",
+        clicks_per_arm=1500,
     ),
     PastExperiment(
         83, "google_ads", AGENCIES, "generic_feature",
@@ -88,6 +89,7 @@ PAST_EXPERIMENTS: tuple[PastExperiment, ...] = (
         -0.06, "loss",
         "Generic platform language underperformed the specific partner-program message by 6%. Agencies "
         "search for multi-client workflows, not platforms.",
+        clicks_per_arm=3000,
     ),
     PastExperiment(
         85, "email", SMB, "pain_point",
@@ -130,6 +132,7 @@ PAST_EXPERIMENTS: tuple[PastExperiment, ...] = (
         -0.07, "loss",
         "Founders do not feel month-end close pain yet; the pain-point creative lost 7% to the runway "
         "dashboard demo. For founders, lead with runway visibility, not close pain.",
+        clicks_per_arm=3000,
     ),
     PastExperiment(
         99, "email", AGENCIES, "social_proof",
@@ -162,6 +165,7 @@ PAST_EXPERIMENTS: tuple[PastExperiment, ...] = (
         -0.09, "loss",
         "Generic platform positioning lost 9% to the audit-readiness explainer. Controllers ignore "
         "category claims; Meta is also a weak channel for mid-market.",
+        clicks_per_arm=2500,
     ),
     PastExperiment(
         108, "email", MID, "quantified_outcome",
@@ -179,6 +183,51 @@ PAST_EXPERIMENTS: tuple[PastExperiment, ...] = (
         "Review stars showed a small positive lift that did not reach significance at 800 clicks per arm. "
         "Proof seems secondary to pain for SMB; worth a larger retest only if cheap.",
         clicks_per_arm=800,
+    ),
+    PastExperiment(
+        89, "linkedin_ads", SMB, "generic_feature",
+        "A 'powerful all-in-one finance solution' ad beats the month-end checklist offer for SMB finance on LinkedIn",
+        "Month-end checklist offer", "The powerful all-in-one finance solution",
+        -0.05, "loss",
+        "Generic solution language lost 5% to the concrete checklist offer. SMB finance readers skip "
+        "category claims and click on things that fix a specific month-end problem.",
+        clicks_per_arm=2500,
+    ),
+    PastExperiment(
+        92, "google_ads", SMB, "urgency_discount",
+        "A limited-time 15% discount headline lifts SMB search conversion",
+        "Standard trial headline", "Limited time: 15% off your first year",
+        -0.06, "loss",
+        "The discount headline lost 6% for SMB finance searchers. They are solving a time problem, not a "
+        "price problem; discounting did not help and cheapened the message.",
+        clicks_per_arm=3000,
+    ),
+    PastExperiment(
+        98, "email", AGENCIES, "urgency_discount",
+        "A 'today only' discount email lifts trial starts among bookkeeping agencies",
+        "Standard partner invite", "Today only: 20% discount for partners",
+        -0.06, "loss",
+        "The today-only discount underperformed the standard invite by 6% and drew unsubscribes. "
+        "Agencies buy on workflow fit, not urgency.",
+        clicks_per_arm=3000,
+    ),
+    PastExperiment(
+        102, "meta_ads", FOUNDERS, "social_proof",
+        "Social proof ('join 2,000 startups') lifts founder signups on Meta",
+        "Runway dashboard demo", "Join 2,000 startups tracking runway",
+        0.06, "inconclusive",
+        "Small positive lift, not significant at 700 clicks per arm. Founders may respond to proof but the "
+        "effect looks smaller than the free-month offer.",
+        clicks_per_arm=700,
+    ),
+    PastExperiment(
+        107, "google_ads", FOUNDERS, "quantified_outcome",
+        "A quantified headline ('know your runway in 5 minutes') lifts founder search conversion",
+        "Brand headline", "Know your runway in 5 minutes",
+        0.07, "inconclusive",
+        "Promising +7% but under-powered at 600 clicks per arm. Runway visibility is the right theme for "
+        "founders and deserves a properly sized retest.",
+        clicks_per_arm=600,
     ),
     PastExperiment(
         112, "google_ads", SMB, "pain_point",
