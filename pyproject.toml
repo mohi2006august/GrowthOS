@@ -43,7 +43,7 @@ markers = ["slow: statistical validation that simulates many experiments"]
 filterwarnings = ["ignore::DeprecationWarning"]
 
 [tool.ruff]
-line-length = 100
+line-length = 120
 target-version = "py311"
 
 [tool.ruff.lint]
